@@ -32,9 +32,10 @@ ASettings& ASettings::Instance()
 
 
 ASettings::ASettings()
-: fDebugRootPath("/Users/jason/Desktop/")// TODO: Useful default for other users
+: fDebugRootPath(File::getSpecialLocation(File::userDocumentsDirectory).getFullPathName().toStdString())
 , fServer("incubator.artlogicdev.net")
 , fUsername("sorting")
+, fEpochs(20)
 , fSaveSpectrogramPng(false)
 , fSaveTensorPng(false)
 {
@@ -95,6 +96,12 @@ const std::string& ASettings::DebugRootPath() const
 }
 
 
+int ASettings::Epochs() const
+{
+   return fEpochs;
+}
+
+
 bool ASettings::SaveSpectrogramPng() const
 {
    return fSaveSpectrogramPng;
@@ -113,6 +120,11 @@ void ASettings::SetDebugRootPath(const std::string& path)
    this->Write();
 }
 
+void ASettings::SetEpochs(int epochs)
+{
+   fEpochs = epochs;
+   this->Write();
+}
 
 void ASettings::SetSaveSpectrogramPng(bool doSave)
 {
@@ -133,6 +145,7 @@ namespace
 {
    const char* const kServerKey = "server";
    const char* const kUsernameKey = "username";
+   const char* const kEpochKey = "epoch";
 
    const char* const kDebugRootPathKey = "debugRootPath";
    const char* const kSaveSpectrogramPngKey = "saveSpectrogramPng";
@@ -145,6 +158,7 @@ void ASettings::Read()
 
    fServer = file->getValue(kServerKey, fServer.c_str()).toStdString();
    fUsername = file->getValue(kUsernameKey, fUsername.c_str()).toStdString();
+   fEpochs = file->getIntValue(kEpochKey, fEpochs);
 
    fDebugRootPath = file->getValue(kDebugRootPathKey, fDebugRootPath.c_str()).toStdString();
    fSaveSpectrogramPng = file->getBoolValue(kSaveSpectrogramPngKey, fSaveSpectrogramPng);

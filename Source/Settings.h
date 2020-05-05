@@ -48,6 +48,9 @@ public:
    std::string Server() const noexcept;
    void SetServer(const std::string& server);
 
+   int Epochs() const;
+   void SetEpochs(int epochs);
+
    // TEMP/DEBUG SETTINGS
    
    const std::string& DebugRootPath() const;
@@ -72,6 +75,7 @@ private:
    std::string fDebugRootPath;
    std::string fServer;
    std::string fUsername;
+   int fEpochs;
    bool fSaveSpectrogramPng;
    bool fSaveTensorPng;
 

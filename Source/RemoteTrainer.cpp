@@ -28,6 +28,7 @@
 #include "PaxArchive.h"
 #include "RemoteTrainer.h"
 #include "SecureSession.h"
+#include "Settings.h"
 
 
 const char* const ARemoteTrainer::kDataArchiveName = "Preproc";
@@ -294,9 +295,11 @@ std::string ARemoteTrainer::TrainingScript(const File& archive) const
     "rm -rf ./$dataDirName log.txt weights.hdf5 ./$weightsName ./$weightsArchiveName;"
 
     // Do the training.
-    // TODO: Get epochs and value split from some configuration
     "tar xf ./$archiveFilename 2>&1;"
-    "./panotti/train_network.py --epochs=20 --val=0.1 2>&1 | tee log.txt;"
+    "./panotti/train_network.py"
+    << " --epochs=" << ASettings::Instance().Epochs()
+    // TODO: Get value split from configuration
+    << " --val=0.1 2>&1 | tee log.txt;"
     ;
 
    return command.str();
