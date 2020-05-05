@@ -31,6 +31,8 @@
 #include "NetFeeder.h"
 #include "Settings.h"
 #include "Spectrogram.h"
+#include "SpectrogramWriter.h"
+
 
 namespace tf  = tensorflow;
 namespace tfo = tf::ops;
@@ -180,7 +182,8 @@ Status ANetFeeder::FeedForward(const ASpectrogram& input)
 #if qSaveSpectrogramInput // DEBUG
    if (ASettings::Instance().SaveSpectrogramPng())
    {
-      input.SaveAsPng(ASettings::Instance().DebugRootPath());
+      SaveAsPng(input, File(ASettings::Instance().DebugRootPath().c_str()), {{ 640, 480 }});
+      SaveAsNpz(input, File(ASettings::Instance().DebugRootPath().c_str()));
    }
 #endif
 
@@ -221,7 +224,8 @@ Status ANetFeeder::FeedForward(const tf::Tensor& input_tensor)
 
    if (ASettings::Instance().SaveTensorPng())
    {
-      CopySpectrogramFrom(input_tensor, 0).SaveAsPng(ASettings::Instance().DebugRootPath());
+      SaveAsNpz(CopySpectrogramFrom(input_tensor, 0),
+                File(ASettings::Instance().DebugRootPath().c_str()));
    }
    
 #endif
@@ -326,7 +330,7 @@ namespace
    }
    
 
-#if qSaveSpectrogram // DEBUG
+#if qSaveSpectrogramInput // DEBUG
 
    ASpectrogram CopySpectrogramFrom(const tf::Tensor& tensor, int channel)
    {

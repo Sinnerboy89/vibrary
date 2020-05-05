@@ -28,6 +28,7 @@
 
 class ASpectrogram;
 
+/** array of width, height pairs */
 using ImageSizes = std::vector<std::pair<int, int>>;
 
 /**
