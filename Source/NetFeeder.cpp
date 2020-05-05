@@ -62,7 +62,7 @@ namespace
     * If input has larger dimension than tensor, crop.
     */
    void CopySpectrogramTo(tf::Tensor& tensor, TensorDim rowDim, TensorDim colDim,
-                          const ASpectrogram& input, int channel, bool flipY = true);
+                          const ASpectrogram& input, int channel, bool flipY = false);
 
 #if qSaveSpectrogramInput
 
@@ -285,7 +285,7 @@ Status ANetFeeder::TopK(int k, std::vector<int>& classes) const
 namespace
 {
    void CopySpectrogramTo(tf::Tensor& tensor, TensorDim rowDim, TensorDim colDim,
-                        const ASpectrogram& input, int channel, bool flipY/*=true*/)
+                        const ASpectrogram& input, int channel, bool flipY/*=false*/)
    {
       assert(tensor.dtype() == tf::DT_FLOAT && "We don't support copying non-float tensors");
       
