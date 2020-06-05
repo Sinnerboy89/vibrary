@@ -4,7 +4,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $SCRIPT_DIR
 pushd ${SCRIPT_DIR}/../../3rdParty/tensorflow
-pwd
+echo Now in $(pwd)
+
 bazel build --jobs=$(sysctl -n hw.logicalcpu) --verbose_failures --cxxopt='-std=c++14' -c opt //tensorflow:libtensorflow_cc.so
 
 if [ $? -ne 0 ]
