@@ -145,7 +145,7 @@ or you can perform the following steps to build from source:
 ### Install other dependencies
 
 ```bash
-$ sudo apt install libssh-4 libarchive-tools
+$ sudo apt install libssh-4 libarchive-dev
 ```
 
 ### Build Vibrary
