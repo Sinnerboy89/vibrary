@@ -2,8 +2,6 @@
 
 ## Get the project
 
-TODO: Expand startup for other platforms beyond MacOS
-
 Clone the project and initialize the submodules in 3rdParty.
 
     $ git clone --recurse-submodules https://github.com/artandlogic/vibrary.git
@@ -15,7 +13,7 @@ Or if you already have cloned the project
 
 ## Get the JUCE framework
 
-The JUCE repository is not kept as a submodule so that you can use your own installation if you want. If you are not already set up, you can follow the instructions [here](https://github.com/WeAreROLI/JUCE).
+The JUCE repository is not kept as a submodule, so please use your own installation. If you are not already set up, you can follow the instructions [here](https://github.com/WeAreROLI/JUCE).
 
 After installation, build the Projucer, set its global paths, and you should be able to export the project files.
 
@@ -95,7 +93,7 @@ Or to build and create an archive of the app, giving it a specific version
 
 ### Create a virtual environment
 
-These instructions assume a Python environment based on [pip & virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) on an Ubuntu Linux distribution.   Start a new environment via
+These instructions assume a Python environment based on [pip & virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) on an Ubuntu Linux distribution. Start a new environment via
 
 ```bash
 $ cd vibrary
