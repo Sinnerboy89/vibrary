@@ -112,7 +112,7 @@ pip install tensorflow-gpu==1.15
 
 or you can perform the following steps to build from source: -->
 
-1. Install Bazel for TensorFlow build
+1. Install Bazel
 
    Binary builds are available [here](https://github.com/bazelbuild/bazel/releases/tag/0.24.1).  A basic Linux download & build can proceed as follows:
 
@@ -128,6 +128,10 @@ or you can perform the following steps to build from source: -->
    or as a user-specific installation via 
 
    ```./bazel-0.24.1-installer-linux-x86_64.sh --user```
+
+1. Build Tensorflow via Bazel
+
+```Tools/Helpers/BuildTensorFlowLinux.sh```
 
 1. Install Java 8. 
 
