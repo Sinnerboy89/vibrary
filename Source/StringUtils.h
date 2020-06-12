@@ -23,7 +23,7 @@
 
 #include <iterator>
 #include <numeric>
-#include <string>
+#include <string.h>
 #include <string_view>
 #include <type_traits>
 #include <vector>

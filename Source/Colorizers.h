@@ -21,6 +21,8 @@
 
 #pragma once
 
+#include <cassert>
+
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #include "Spectrogram.h"

@@ -263,8 +263,8 @@
         <MODULEPATH id="juce_dsp" path="../../../JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
-    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraCompilerFlags="-I../../3rdParty/tensorflow/dist/include/protobuf/src&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow/eigen&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow/bazel-genfiles&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow&#10;-I../../3rdParty/tensorflow/dist/include&#10;-I../../3rdParty/cnpy/dist/include&#10;-I../../3rdParty/sqlite/src&#10;-I/usr/local/opt/libssh/include&#10;-I/usr/local/opt/libarchive/include"
-                extraLinkerFlags="${PROJECT_DIR}/../../3rdParty/tensorflow/dist/lib/libtensorflow_framework.1.dylib&#10;${PROJECT_DIR}/../../3rdParty/tensorflow/dist/lib/libtensorflow_cc.so&#10;${PROJECT_DIR}/../../3rdParty/cnpy/dist/lib/libcnpy.a&#10;/usr/local/lib/libssh.4.dylib&#10;/usr/local/opt/libarchive/lib/libarchive.13.dylib&#10;-L/usr/local/opt/openssl/lib&#10;-rpath @loader_path/../Libraries">
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraLinkerFlags="${PROJECT_DIR}/../../3rdParty/tensorflow/dist/lib/libtensorflow_framework.1.dylib&#10;${PROJECT_DIR}/../../3rdParty/tensorflow/dist/lib/libtensorflow_cc.so&#10;${PROJECT_DIR}/../../3rdParty/cnpy/dist/lib/libcnpy.a&#10;/usr/local/lib/libssh.4.dylib&#10;/usr/local/opt/libarchive/lib/libarchive.13.dylib&#10;-L/usr/local/opt/openssl/lib&#10;-rpath @loader_path/../Libraries"
+                extraCompilerFlags="-I../../3rdParty/tensorflow/cc/saved_model&#10;-I../../3rdParty/tensorflow/dist/include/protobuf/src&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow/eigen&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow/bazel-genfiles&#10;-I../../3rdParty/tensorflow/dist/include/tensorflow&#10;-I../../3rdParty/tensorflow/dist/include&#10;-I../../3rdParty/cnpy/dist/include&#10;-I../../3rdParty/sqlite/src">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Sorting"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Sorting"/>
