@@ -142,10 +142,11 @@ or you can perform the following steps to build from source:
 
 ...**TODO:** add more for TF build from source.  For now, continuing based on pip binary install.
 
-### Install other dependencies
+### Install/build other dependencies
 
 ```bash
 $ sudo apt install libssh-4 libarchive-dev
+$ Tools/Helpers/BuildCnpy.sh
 ```
 
 ### Build Vibrary
