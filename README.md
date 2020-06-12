@@ -4,11 +4,11 @@
 
 Clone the project and initialize the submodules in 3rdParty.
 
-    $ git clone --recurse-submodules https://github.com/artandlogic/vibrary.git
+    git clone --recurse-submodules https://github.com/artandlogic/vibrary.git
 
 Or if you already have cloned the project
         
-    $ git submodule update --init
+    git submodule update --init
 
 
 ## Get the JUCE framework
@@ -35,18 +35,18 @@ Instructions [here](./README-Server.md)
     
     macOS 10.15 will prevent `bazel-real` from opening because it isn't signed. You can work around this by downloading with `curl` instead of the browser. The following downloads the installer version. 
     
-        $ curl -L -O https://github.com/bazelbuild/bazel/releases/download/0.24.1/bazel-0.24.1-installer-darwin-x86_64.sh
-        $ . bazel-0.24.1-installer-darwin-x86_64.sh
+        curl -L -O https://github.com/bazelbuild/bazel/releases/download/0.24.1/bazel-0.24.1-installer-darwin-x86_64.sh
+        . bazel-0.24.1-installer-darwin-x86_64.sh
     
 1. Install Java 8
 
-        $ brew tap homebrew/cask
-        $ brew tap AdoptOpenJDK/openjdk
-        $ brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+        brew tap homebrew/cask
+        brew tap AdoptOpenJDK/openjdk
+        brew cask install adoptopenjdk/openjdk/adoptopenjdk8
     
 1. Necessary Python support for Bazel builds
    
-        $ pip install future
+        pip install future
     
 ### Install other dependencies
 
@@ -54,27 +54,27 @@ Note that libarchive will not be linked by homebrew because macOS includes its o
 
 *WARNING*: The PostBuild script(s) in the Tools directory and `Vibrary.jucer` file have references to specific versions of these libraries and may need to be udpated after the install or `brew update`.
 
-    $ brew install libssh libarchive
+    brew install libssh libarchive
 
 ### (Optional) Build Tensorflow
 
 The PreBuild scripts will check if TensorFlow needs to be built, but to manually build it yourself:
 
-    $ Tools/Helpers/BuildTensorFlowMac.sh
+    Tools/Helpers/BuildTensorFlowMac.sh
 
 
 ### (Optional) Build cnpy
 
 The PreBuild scripts will check if Cnpy needs to be build, but to manually build it yourself:
 
-    $ Tools/Helpers/BuildCnpy.sh
+    Tools/Helpers/BuildCnpy.sh
 
 ### Build Vibrary
 
 Run `Tools/BuildMac.sh`, which will perform multiple steps.  Manual steps are outlined below.
 By default the `BuildMac.sh` script shows little output.  To see the progress of the `BuildMac.sh` script, run (in another terminal window)
 
-    $ tail -f build.log
+    tail -f build.log
 
 Currently there is only an Xcode exporter configured.
 
@@ -85,7 +85,7 @@ Manual build steps:
 
 Or to build and create an archive of the app, giving it a specific version
 
- `$ Tools/BuildMac.sh <version>` replacing version with the version number of the release. If no version is given the current version is bumped up one.
+ `Tools/BuildMac.sh <version>` replacing version with the version number of the release. If no version is given the current version is bumped up one.
 
 
 
@@ -104,13 +104,13 @@ pip install --upgrade pip
 
 ### Install Tensorflow
 
-You can either [install a binary via `pip`](https://www.tensorflow.org/install/pip), such as the GPU-enabled version
+<!-- You can either [install a binary via `pip`](https://www.tensorflow.org/install/pip), such as the GPU-enabled version
 
 ```
 pip install tensorflow-gpu==1.15
 ```
 
-or you can perform the following steps to build from source:
+or you can perform the following steps to build from source: -->
 
 1. Install Bazel for TensorFlow build
 
@@ -140,7 +140,6 @@ or you can perform the following steps to build from source:
 
    `pip install future`
 
-...**TODO:** add more for TF build from source.  For now, continuing based on pip binary install.
 
 ### Install/build other dependencies
 
