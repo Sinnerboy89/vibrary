@@ -150,8 +150,6 @@ $ sudo apt install libssh-4 libarchive-tools
 
 ### Build Vibrary
 
-Run the `Projucer` JUCE app, choose "Open Existing Project" and select the `Vibrary.jucer` file in the `vibrary` directory, and then....
-
-**TODO:**... Seems the options to export are greyed-out.  Can't export.
+Run the `Projucer` JUCE app, choose "Open Existing Project" and select the `Vibrary.jucer` file in the `vibrary` directory, and "Save" the project (Ctrl+s) to prompt Projucer to output the Makefile needed by `make` to build vibrary.
 
 ![JUCE_screenshot](/home/shawley/Downloads/JUCE_screenshot.png)
