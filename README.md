@@ -150,7 +150,7 @@ This might take a few attempts - the parallel nature of Bazel is nice, but not t
 ### Install/build other dependencies
 
 ```bash
-sudo apt install libssh-4 libarchive-dev
+sudo apt install libssh-dev libarchive-dev
 Tools/Helpers/BuildCnpy.sh
 ```
 
