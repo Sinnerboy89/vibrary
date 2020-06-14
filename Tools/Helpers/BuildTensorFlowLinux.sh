@@ -6,7 +6,7 @@ echo $SCRIPT_DIR
 pushd ${SCRIPT_DIR}/../../3rdParty/tensorflow
 echo Now in $(pwd)
 
-bazel build --jobs=5 --verbose_failures --cxxopt='-std=c++14' -c opt //tensorflow:libtensorflow_cc.so
+# bazel build --jobs=4 --verbose_failures --cxxopt='-std=c++14' -c opt //tensorflow:libtensorflow_cc.so
 
 if [ $? -ne 0 ]
 then
@@ -16,7 +16,7 @@ fi
 # Restore some headers that the build used but we will need to keep in sync (protobuf mainly)
 tensorflow/contrib/makefile/download_dependencies.sh
 
-../../Tools/Helpers/CopyTfLibs.sh
-../../Tools/Helpers/CopyTfHeaders.sh
+sudo ../../Tools/Helpers/CopyTfLibs.sh
+sudo ../../Tools/Helpers/CopyTfHeaders.sh
 
 popd

@@ -16,4 +16,5 @@ cd ${SCRIPT_DIR}/../../3rdParty/tensorflow
 
 mkdir -p dist/lib
 cp bazel-bin/tensorflow/libtensorflow_cc.so* dist/lib
+cp bazel-bin/tensorflow/libtensorflow_framework*.so* dist/lib/
 cp bazel-bin/tensorflow/libtensorflow_framework.*.dylib dist/lib/

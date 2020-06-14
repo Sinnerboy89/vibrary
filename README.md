@@ -133,6 +133,8 @@ or you can perform the following steps to build from source: -->
 
 ```Tools/Helpers/BuildTensorFlowLinux.sh```
 
+This might take a few attempts - the parallel nature of Bazel is nice, but not the most stable. If you encounter errors relating to "gettid" declaration conflicts, these are likely to do with a very recent version of gcc or clang being used. Hints on a solution can be found here: https://github.com/tensorflow/tensorflow/issues/34291#issuecomment-570925292 which references this comment: https://gist.github.com/kmhofmann/e368a2ebba05f807fa1a90b3bf9a1e03#gistcomment-3323371
+
 1. Install Java 8. 
 
    ```bash
